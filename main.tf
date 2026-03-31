@@ -1,5 +1,5 @@
 resource "aws_instance" "web" {
-  ami           = "var.ami"
+  ami           = var.ami
   instance_type = var.instance_type
 
   user_data = <<-EOF
@@ -12,6 +12,6 @@ resource "aws_instance" "web" {
               EOF
 
   tags = {
-    Name = "var.name_tag"
+    Name = var.name_tag
   }
 }
